@@ -17,8 +17,13 @@ FSJS project 2 - List Filter and Pagination
    scoped to that function.
 ***/
 
-
-
+ const pageList = document.querySelector('ul');
+ const eachStudent = pageList.children;
+ const buttonDiv = document.querySelector('.pagination');
+ const buttonU1 = buttonDiv.querySelector('ul');
+ const studentsPerPage = 10;
+ const searchDiv = document.querySelector('.student-search');
+ const noResultDiv = document.querySelector('.no-result');
 
 /*** 
    Create the `showPage` function to hide all of the items in the 
@@ -35,16 +40,86 @@ FSJS project 2 - List Filter and Pagination
        "invoke" the function 
 ***/
 
+function numberOfPages() {
+   let pages = Math.ceil(eachStudent.length / studentsPerPage);
+   return pages; 
+}  // Function to determine number of pages based on number of students.
 
+for (let i = 1; i <= numberOfPages(); i++) {
+   let pageli = document.createElement("li");
+   let pageLink = document.createElement('a');
+   pageLink.className = 'active';
+   pageLink.href = '#';
+   pageLink.textContent = i;
+   buttonU1.appendChild(pageli);
+   pageli.appendChild(pageLink);
+}  // Loop to create page buttons based on number of required pages.
 
+function showFirstTen() {
+   for (let i = 0; i < eachStudent.length; i++) {
+      if (i < studentsPerPage) {
+         eachStudent[i].style.display = '';   
+      } else {
+         eachStudent[i].style.display = 'none';
+      }
+   }
+} // Function to automatically show first ten students when page loads.
 
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
    functionality to the pagination buttons.
 ***/
 
+let searchInput = document.createElement('input');
+let searchButton = document.createElement('button');
+function showSearch() {
+   searchInput.placeholder = 'Search for students...';
+searchButton.textContent = 'Search';
+searchDiv.appendChild(searchInput);
+searchDiv.appendChild(searchButton);
+} // Function to display search box dynamically.
 
+const searchResults = [];
+searchButton.addEventListener('click', () => {
+   let filter = searchInput.value.toLowerCase();
+   searchResults.length = 0;
+   for (let i = 0; i < eachStudent.length; i++){
+      if (eachStudent[i].innerHTML.indexOf(filter) > -1);
+      eachStudent[i].style.display = '';
 
+   } else { 
+      eachStudent[i].style.display = 'none';
+      searchResults.push(i);
+   }
+   } 
+    // Event Listenener for search box functionality. 
+   // Array to hold number of hidden students.
 
+if (searchResults.length === eachStudent.length) {
+   noResultDiv.innerHTML = '<h1>No Results</h1>';    
+   }  else {
+      noResultDiv.innerHTML = '';
+   }
+}); // If all students are hidden, a "no results" message is displayed.
+
+buttonDiv.addEventListener('click', (event) => {
+   noResultDiv.innerHTML = '';
+   let buttonNumber = parseInt(event.target.textContent);
+   let max = buttonNumber * 10;
+   let min = max - 10;
+   for (let i = 0; i < eachStudent.length; i++) {
+      if (i>= min && i < max) {
+         eachStudent[i].style.display = '';
+      } else {
+         eachStudent[i].style.display = 'none';
+      }
+   }
+}); // Event Listener to divide students between pages.
+
+showFirstTen(); 
+// Function call to display furst ten students on load.
+
+showSearch();
+// Function call to show search box if JavaScript is enabled.
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
