@@ -43,7 +43,7 @@ FSJS project 2 - List Filter and Pagination
 function numberOfPages() {
    let pages = Math.ceil(eachStudent.length / studentsPerPage);
    return pages; 
-}  // Function to determine number of pages based on number of students.
+}  // Function to determine number of pages based on the number of students.
 
 for (let i = 1; i <= numberOfPages(); i++) {
    let pageli = document.createElement("li");
@@ -77,7 +77,7 @@ function showSearch() {
 searchButton.textContent = 'Search';
 searchDiv.appendChild(searchInput);
 searchDiv.appendChild(searchButton);
-} // Function to display search box dynamically.
+} // Function to display the search box dynamically.
 
 const searchResults = [];
 searchButton.addEventListener('click', () => {
@@ -92,8 +92,8 @@ searchButton.addEventListener('click', () => {
       searchResults.push(i);
    }
    } 
-    // Event Listenener for search box functionality. 
-   // Array to hold number of hidden students.
+    // Added an Event Listenener for the search box to function properly so that the click of a button will send a signal to the computer to take you from one page to the next. 
+   // Created an array to hold the number of hidden students.
 
 if (searchResults.length === eachStudent.length) {
    noResultDiv.innerHTML = '<h1>No Results</h1>';    
@@ -114,10 +114,10 @@ buttonDiv.addEventListener('click', (event) => {
          eachStudent[i].style.display = 'none';
       }
    }
-}); // Event Listener to divide students between pages.
+}); // Added an Event Listener to divide the students between pages, ten per page.
 
 showFirstTen(); 
-// Function call to display furst ten students on load.
+// Function call to display first ten students on the list.
 
 showSearch();
 // Function call to show search box if JavaScript is enabled.
