@@ -92,7 +92,7 @@ searchButton.addEventListener('click', () => {
       searchResults.push(i);
    }
    } 
-    // Added an Event Listenener for the search box to function properly so that the click of a button will send a signal to the computer to take you from one page to the next. 
+    // Added an Event Listener for the search box to function properly so that the click of a button will send a signal to the computer to take you from one page to the next. 
    // Created an array to hold the number of hidden students.
 
 if (searchResults.length === eachStudent.length) {
