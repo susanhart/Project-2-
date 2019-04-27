@@ -104,7 +104,8 @@ if (searchResults.length === eachStudent.length) {
 
 buttonDiv.addEventListener('click', (event) => {
    noResultDiv.innerHTML = '';
-   let buttonNumber = parseInt(event.target.textContent);
+   let buttonNumber = parseInt(event.target.textContent); 
+   // The `event` object is something made available inside an event listener. For example, when an event listener is created on a text input field, the event refers to the type of event- be it a click, keyup, onSubmit - there are many; the target is the place the event is happening- which is the text input field, and the textContent part grabs the text from the field. So, in a nutshell, that's how you grab data from the form.
    let max = buttonNumber * 10;
    let min = max - 10;
    for (let i = 0; i < eachStudent.length; i++) {
