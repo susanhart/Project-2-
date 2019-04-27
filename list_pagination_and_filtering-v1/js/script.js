@@ -86,7 +86,6 @@ searchButton.addEventListener('click', () => {
    for (let i = 0; i < eachStudent.length; i++){
       if (eachStudent[i].innerHTML.indexOf(filter) > -1);
       eachStudent[i].style.display = '';
-
    } else { 
       eachStudent[i].style.display = 'none';
       searchResults.push(i);
