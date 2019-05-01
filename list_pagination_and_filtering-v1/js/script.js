@@ -25,7 +25,7 @@ const studentsPerPage = 10;
  const paginationList = paginationWrapper.querySelector('ul');
  const searchDiv = document.querySelector('.student-search');
  const noResultDiv = document.querySelector('.no-result');
-//The variables (that store the DOM elements) needed to paginate.
+//The list of variables (that store the DOM elements) needed to paginate.
 /*** 
    Create the `showPage` function to hide all of the items in the 
    list except for the ten you want to show.
@@ -44,7 +44,7 @@ const studentsPerPage = 10;
 function numberOfPages() {
    let pages = Math.ceil(eachStudent.length / studentsPerPage);
    return pages; 
-}  // Function to determine number of pages based on the number of students.
+}  // Function to determine the number of pages based on the number of students.
 
 for (let i = 1; i <= numberOfPages(); i++) {
    let pageli = document.createElement("li");
@@ -63,6 +63,7 @@ function showFirstTen() {
       }
    }
 } // Function to automatically show the first ten students when the page loads.
+//Created the `showPage` function to hide all of the items in the list except the items you want to show.
 
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
@@ -85,21 +86,21 @@ searchButton.addEventListener('click', () => {
    for (let i = 0; i < eachStudent.length; i++){
       if (eachStudent[i].innerHTML.indexOf(filter) > -1);
       eachStudent[i].style.display = '';
-     }  else  { 
+      }  else  { 
       eachStudent[i].style.display = 'none';
       searchResults.push(i);
-      }
+    }
    } 
     // Added an Event Listener for the search box to function properly so that the click of a button will send a signal to the computer to take you from one page to the next. 
    // Created an array to hold the number of hidden students.
 
-if (searchResults.length === eachStudent.length) {
+      if (searchResults.length === eachStudent.length) {
    noResultDiv.innerHTML = '<h1>No Results</h1>';    
    }  else {
       noResultDiv.innerHTML = '';
    }
-}); // If all students are hidden, a "no results" message is displayed.
-
+     }); // If all students are hidden, a "no results" message is displayed.
+  
 buttonDiv.addEventListener('click', (event) => {
    noResultDiv.innerHTML = '';
    let buttonNumber = parseInt(event.target.textContent); 
@@ -118,7 +119,5 @@ buttonDiv.addEventListener('click', (event) => {
 showFirstTen(); 
 // Function call to display first ten students on the list.
 
-showSearch();
-// Function call to show search box if JavaScript is enabled.
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
