@@ -25,7 +25,7 @@ const studentsPerPage = 10;
  const paginationList = paginationWrapper.querySelector('ul');
  const searchDiv = document.querySelector('.student-search');
  const noResultDiv = document.querySelector('.no-result');
-
+//The variables (that store the DOM elements) needed to paginate.
 /*** 
    Create the `showPage` function to hide all of the items in the 
    list except for the ten you want to show.
@@ -52,19 +52,17 @@ for (let i = 1; i <= numberOfPages(); i++) {
    pageLink.className = 'active';
    pageLink.href = '#';
    pageLink.textContent = i;
-   buttonU1.appendChild(pageli);
+   paginationList.appendChild(pageli);
    pageli.appendChild(pageLink);
-}  // Loop to create page buttons based on number of required pages.
+}  // For Loop to create page buttons based on the number (6) of required pages.
 
 function showFirstTen() {
    for (let i = 0; i < eachStudent.length; i++) {
-      if (i < studentsPerPage) {
-         eachStudent[i].style.display = '';   
-      } else {
+      if (i >= studentsPerPage) {
          eachStudent[i].style.display = 'none';
       }
    }
-} // Function to automatically show first ten students when page loads.
+} // Function to automatically show the first ten students when the page loads.
 
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
@@ -87,10 +85,10 @@ searchButton.addEventListener('click', () => {
    for (let i = 0; i < eachStudent.length; i++){
       if (eachStudent[i].innerHTML.indexOf(filter) > -1);
       eachStudent[i].style.display = '';
-   } else { 
+     }  else  { 
       eachStudent[i].style.display = 'none';
       searchResults.push(i);
-   }
+      }
    } 
     // Added an Event Listener for the search box to function properly so that the click of a button will send a signal to the computer to take you from one page to the next. 
    // Created an array to hold the number of hidden students.
