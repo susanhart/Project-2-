@@ -17,11 +17,12 @@ FSJS project 2 - List Filter and Pagination
    scoped to that function.
 ***/
 
- const pageList = document.querySelector('ul');
+const studentsPerPage = 10;
+
+ const pageList = document.querySelector('.student-list');
  const eachStudent = pageList.children;
- const buttonDiv = document.querySelector('.pagination');
- const buttonU1 = buttonDiv.querySelector('ul');
- const studentsPerPage = 10;
+ const paginationWrapper = document.querySelector('.pagination');
+ const paginationList = paginationWrapper.querySelector('ul');
  const searchDiv = document.querySelector('.student-search');
  const noResultDiv = document.querySelector('.no-result');
 
