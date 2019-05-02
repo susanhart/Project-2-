@@ -17,9 +17,9 @@ FSJS project 2 - List Filter and Pagination
    scoped to that function.
 ***/
 
- const studentsPerPage = 10; //assigning ten students per page load
+ const studentsPerPage = 10; //Assigning ten students per page load.
  const page = 1
- //setting the default page for page load
+ // Setting the default page for page load.
 
  const pageList = document.querySelector('.student-list');
  const eachStudent = pageList.children;
@@ -58,13 +58,13 @@ for (let i = 1; i <= numberOfPages(); i++) {
    pageli.appendChild(pageLink);
 }  // For Loop to create page buttons based on the number (6) of required pages.
 
-function showPage (paginationlist, page) { // to assign an index of students
+function showPage (paginationlist, page) { // Function to assign an index of students.
 for (let i = 0; i < paginationList.length; i++) {
-   //show 10 students out of the entire index of students  
+   // Show 10 students out of the entire index of students.  
    if (i>=(page -1)*studentsperPage && i< page * studentsPerPage {
      paginationList[i].style.display = "";
    } else {
-   //hide the rest
+   // Hide the rest.
    paginationList[i].style.display = 'none';
       }
    }
@@ -82,6 +82,23 @@ function showFirstTen() {
    Create the `appendPageLinks function` to generate, append, and add 
    functionality to the pagination buttons.
 ***/
+
+function appendPageLinks () {
+   // Creating the container for our pagination links, 
+   // the "apendPageLinks function" in order to generate,
+   // append, and add functionality to the pagination buttons.
+ const pagination = document.createElement ('div');
+const pageDiv = document.QuerySelector ('body div');
+const List = document.createElement ('ul');
+pagination.appendChild(List);} // Creates each button for the pagination.
+
+for (let i=0; i< numberOfPages; i+=1) {
+   const pageElement = document.createElement('li');
+   pageLink.textContent = i+1;
+pageLink.classList.remove ('active');
+pageLink.addEventListener("click", () => {})
+} // Added an event lsitener to listen for a click on the buttons 
+// to rerun functions with the output of the page and the list.
 
 let searchInput = document.createElement('input');
 let searchButton = document.createElement('button');
