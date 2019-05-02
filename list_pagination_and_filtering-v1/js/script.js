@@ -61,7 +61,7 @@ for (let i = 1; i <= numberOfPages(); i++) {
 function showPage (paginationlist, page) { // Function to assign an index of students.
 for (let i = 0; i < paginationList.length; i++) {
    // Show 10 students out of the entire index of students.  
-   if (i>=(page -1)*studentsperPage && i< page * studentsPerPage {
+   if (i>=(page -1)*studentsperPage && i< page * studentsPerPage) {
      paginationList[i].style.display = "";
    } else {
    // Hide the rest.
@@ -144,7 +144,7 @@ buttonDiv.addEventListener('click', (event) => {
          eachStudent[i].style.display = 'none';
       }
    }
-}); // Added an Event Listener to divide the students between pages, ten per page.
+}); // Add  ed an Event Listener to divide the students between pages, ten per page.
 
 showFirstTen(); 
 // Function call to display first ten students on the list.
