@@ -17,7 +17,9 @@ FSJS project 2 - List Filter and Pagination
    scoped to that function.
 ***/
 
-const studentsPerPage = 10;
+ const studentsPerPage = 10; //assigning ten students per page load
+ const page = 1
+ //setting the default page for page load
 
  const pageList = document.querySelector('.student-list');
  const eachStudent = pageList.children;
@@ -56,6 +58,17 @@ for (let i = 1; i <= numberOfPages(); i++) {
    pageli.appendChild(pageLink);
 }  // For Loop to create page buttons based on the number (6) of required pages.
 
+function showPage (paginationlist, page) { // to assign an index of students
+for (let i = 0; i < paginationList.length; i++) {
+   //show 10 students out of the entire index of students  
+   if (i>=(page -1)*studentsperPage && i< page * studentsPerPage {
+     paginationList[i].style.display = "";
+   } else {
+   //hide the rest
+   paginationList[i].style.display = 'none';
+      }
+   }
+}   
 function showFirstTen() {
    for (let i = 0; i < eachStudent.length; i++) {
       if (i >= studentsPerPage) {
@@ -99,7 +112,7 @@ searchButton.addEventListener('click', () => {
    }  else {
       noResultDiv.innerHTML = '';
    }
-     }); // If all students are hidden, a "no results" message is displayed.
+}); // If all students are hidden, a "no results" message is displayed.
   
 buttonDiv.addEventListener('click', (event) => {
    noResultDiv.innerHTML = '';
