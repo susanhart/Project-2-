@@ -21,7 +21,6 @@ FSJS project 2 - List Filter and Pagination
  const pageList = document.querySelector('ul');
  const eachStudent = pageList.children;
  const paginationWrapper = document.querySelector('.pagination');
- const paginationList = document.querySelector('ul');
  const searchDiv = document.querySelector('.student-search');
  const noResultDiv = document.querySelector('.no-result');
 //The list of variables (that store the DOM elements) needed to paginate.
@@ -51,18 +50,18 @@ for (let i = 1; i <= numberOfPages(); i++) {
    pageLink.className = 'active';
    pageLink.href = '#';
    pageLink.textContent = i;
-   paginationList.appendChild(pageli);
+   pageList.appendChild(pageli);
    pageli.appendChild(pageLink);
 }  // For Loop to create page buttons based on the number (6) of required pages.
 
-function showPage (paginationlist, page) { // Function to assign an index of students.
-for (let i = 0; i < paginationList.length; i++) {
+function showPage (pagelist, page) { // Function to assign an index of students.
+for (let i = 0; i < pageList.length; i++) {
    // Show 10 students out of the entire index of students.  
    if (i>=(page -1)*studentsperPage && i< page * studentsPerPage) {
-     paginationList[i].style.display = "";
+     pageList[i].style.display = "";
    } else {
    // Hide the rest.
-   paginationList[i].style.display = 'none';
+   pageList[i].style.display = 'none';
       }
    }
 }   
