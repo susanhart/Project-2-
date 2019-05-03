@@ -54,7 +54,7 @@ for (let i = 1; i <= numberOfPages(); i++) {
    pageli.appendChild(pageLink);
 }  // For Loop to create page buttons based on the number (6) of required pages.
 
-function showPage (pagelist, page) { // Function to assign an index of students.
+function showPage (pageList, page) { // Function to assign an index of students.
 for (let i = 0; i < pageList.length; i++) {
    // Show 10 students out of the entire index of students.  
    if (i>=(page -1)*studentsperPage && i< page * studentsPerPage) {
