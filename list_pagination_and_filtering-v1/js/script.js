@@ -18,10 +18,10 @@ FSJS project 2 - List Filter and Pagination
 
  const studentsPerPage = 10; //Assigning ten students per page load.
 
- const pageList = document.querySelector('.student-list');
+ const pageList = document.querySelector('ul');
  const eachStudent = pageList.children;
  const paginationWrapper = document.querySelector('.pagination');
- const paginationList = paginationWrapper.querySelector('.student-list');
+ const paginationList = paginationWrapper.querySelector('ul');
  const searchDiv = document.querySelector('.student-search');
  const noResultDiv = document.querySelector('.no-result');
 //The list of variables (that store the DOM elements) needed to paginate.
