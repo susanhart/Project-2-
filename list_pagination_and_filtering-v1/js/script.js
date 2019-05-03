@@ -18,8 +18,6 @@ FSJS project 2 - List Filter and Pagination
 ***/
 
  const studentsPerPage = 10; //Assigning ten students per page load.
- const page = 1
- // Setting the default page for page load.
 
  const pageList = document.querySelector('.student-list');
  const eachStudent = pageList.children;
