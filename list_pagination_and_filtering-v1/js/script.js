@@ -55,17 +55,16 @@ for (let i = 1; i <= numberOfPages(); i++) {
 }  // For Loop to create page buttons based on the number (6) of required pages.
 
 function showPage (list, page) { // Function to assign an index of students.
-for (let i = 0; i < list.length; i++) {
-var startIndex = (page * studentsPerPage) - studentsPerPage
-var endIndex = page * studentsPerPage
+   var startIndex = (page * studentsPerPage) - studentsPerPage
+   var endIndex = page * studentsPerPage
 
+   for (let i = 0; i < list.length; i++) {
+   if (i >= studentsPerPage) {
+      list[i].style.display = 'none';
 
    // Show 10 students out of the entire index of students.  
-   if (i>=(page -1)*studentsperPage && i< page * studentsPerPage) {
-     List[i].style.display = "";
-   } else {
    // Hide the rest.
-   List[i].style.display = 'none';
+   
       }
    }
 }   
@@ -149,3 +148,4 @@ buttonDiv.addEventListener('click', (event) => {
 showFirstTen(); 
 // Function call to display first ten students on the list.
 })
+
