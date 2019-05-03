@@ -56,6 +56,10 @@ for (let i = 1; i <= numberOfPages(); i++) {
 
 function showPage (list, page) { // Function to assign an index of students.
 for (let i = 0; i < list.length; i++) {
+var startIndex = (page * studentsPerPage) - studentsPerPage
+var endIndex = page * studentsPerPage
+
+
    // Show 10 students out of the entire index of students.  
    if (i>=(page -1)*studentsperPage && i< page * studentsPerPage) {
      List[i].style.display = "";
@@ -65,6 +69,7 @@ for (let i = 0; i < list.length; i++) {
       }
    }
 }   
+
 function showFirstTen() {
    for (let i = 0; i < eachStudent.length; i++) {
       if (i >= studentsPerPage) {
