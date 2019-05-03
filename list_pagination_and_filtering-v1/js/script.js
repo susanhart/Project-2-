@@ -134,7 +134,7 @@ buttonDiv.addEventListener('click', (event) => {
    let max = buttonNumber * 10;
    let min = max - 10;
    for (let i = 0; i < eachStudent.length; i++) {
-      if (i>= min && i < max) {
+      if (i>= min && i <= max) {
          eachStudent[i].style.display = '';
       } else {
          eachStudent[i].style.display = 'none';
