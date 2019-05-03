@@ -68,7 +68,7 @@ function showPage (list, page) { // Function to assign an index of students.
    
       }
    }
-   
+   showPage (pageList,1) 
 
 function showFirstTen() {
    for (let i = 0; i < eachStudent.length; i++) {
