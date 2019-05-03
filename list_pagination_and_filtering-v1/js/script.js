@@ -5,7 +5,6 @@ FSJS project 2 - List Filter and Pagination
    
 // Study guide for this project - https://drive.google.com/file/d/1OD1diUsTMdpfMDv677TfL1xO2CEkykSz/view?usp=sharing
 
-
 /*** 
    Add your global variables that store the DOM elements you will 
    need to reference and/or manipulate. 
@@ -113,8 +112,7 @@ searchButton.addEventListener('click', () => {
    searchResults.length = 0; 
    for (let i = 0; i < eachStudent.length; i++){
      { if (eachStudent[i].innerHTML.indexOf(filter) > -1)
-      eachStudent[i].style.display = ''; {
-       else  { 
+      eachStudent[i].style.display = ''; { 
       eachStudent[i].style.display = 'none';
       searchResults.push(i);
     }
@@ -146,6 +144,4 @@ buttonDiv.addEventListener('click', (event) => {
 
 showFirstTen(); 
 // Function call to display first ten students on the list.
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
+})
