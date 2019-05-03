@@ -110,11 +110,11 @@ searchDiv.appendChild(searchButton);
 const searchResults = [];
 searchButton.addEventListener('click', () => {
    let filter = searchInput.value.toLowerCase();
-   searchResults.length = 0;
+   searchResults.length = 0; 
    for (let i = 0; i < eachStudent.length; i++){
-      if (eachStudent[i].innerHTML.indexOf(filter) > -1);
-      eachStudent[i].style.display = '';
-      }  else  { 
+     { if (eachStudent[i].innerHTML.indexOf(filter) > -1)
+      eachStudent[i].style.display = ''; {
+       else  { 
       eachStudent[i].style.display = 'none';
       searchResults.push(i);
     }
@@ -127,7 +127,7 @@ searchButton.addEventListener('click', () => {
    }  else {
       noResultDiv.innerHTML = '';
    }
-}); // If all students are hidden, a "no results" message is displayed.
+}; // If all students are hidden, a "no results" message is displayed.
   
 buttonDiv.addEventListener('click', (event) => {
    noResultDiv.innerHTML = '';
