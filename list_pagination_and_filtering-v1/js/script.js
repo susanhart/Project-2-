@@ -61,14 +61,14 @@ function showPage (list, page) { // Function to assign an index of students.
    for (let i = 0; i < list.length; i++) {
    if (i>= startIndex && i< endIndex) {
       list[i].style.display = '';
-    } else  { list[i].style.display = 'none'} 
+    } else  { list[i].style.display = 'none';} 
 
    // Show 10 students out of the entire index of students.  
    // Hide the rest.
    
       }
    }
-   showPage (pageList,1) 
+   showPage (pageList,1); 
 
 function showFirstTen() {
    for (let i = 0; i < eachStudent.length; i++) {
