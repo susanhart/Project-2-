@@ -21,7 +21,7 @@ FSJS project 2 - List Filter and Pagination
  const pageList = document.querySelector('ul');
  const eachStudent = pageList.children;
  const paginationWrapper = document.querySelector('.pagination');
- const paginationList = paginationWrapper.querySelector('ul');
+ const paginationList = document.querySelector('ul');
  const searchDiv = document.querySelector('.student-search');
  const noResultDiv = document.querySelector('.no-result');
 //The list of variables (that store the DOM elements) needed to paginate.
