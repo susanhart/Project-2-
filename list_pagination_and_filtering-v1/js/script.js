@@ -20,7 +20,7 @@ FSJS project 2 - List Filter and Pagination
 
  const pageList = document.querySelector('ul');
  const eachStudent = pageList.children;
- const paginationWrapper = document.querySelector('.pagination');
+ 
  const searchDiv = document.querySelector('.student-search');
  const noResultDiv = document.querySelector('.no-result');
 //The list of variables (that store the DOM elements) needed to paginate.
@@ -84,12 +84,15 @@ function showFirstTen() {
    functionality to the pagination buttons.
 ***/
 
-function appendPageLinks () {
+function appendPageLinks (list) {
+   let pages = Math.ceil(eachStudent.length / studentsPerPage);
    // Creating the container for our pagination links, 
    // the "apendPageLinks function" in order to generate,
    // append, and add functionality to the pagination buttons.
- const pagination = document.createElement ('div');
-const pageDiv = document.QuerySelector ('body div');
+   
+   const pagination = document.createElement ('div');
+   const paginationWrapper = document.querySelector('.pagination');
+   const pageDiv = document.querySelector ('body div');
 const List = document.createElement ('ul');
 pagination.appendChild(List);} // Creates each button for the pagination.
 
