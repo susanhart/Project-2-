@@ -93,6 +93,7 @@ function appendPageLinks() {
    // Creates each button for the pagination.
    document.body.appendChild(pagination)
 } 
+// Function to display the search box dynamically.
 
 let searchInput = document.createElement('input');
 let searchButton = document.createElement('button');
@@ -101,9 +102,12 @@ function showSearch() {
    searchButton.textContent = 'Search';
    searchDiv.appendChild(searchInput);
    searchDiv.appendChild(searchButton);
-} // Function to display the search box dynamically.
-
+} 
 const searchResults = [];
+
+ // Added an Event Listener for the search box to function properly so that the click of a button will send a signal to the computer to take you from one page to the next. 
+      // Created an array to hold the number of hidden students.
+
 searchButton.addEventListener('click', () => {
    let filter = searchInput.value.toLowerCase();
    searchResults.length = 0;
@@ -115,9 +119,7 @@ searchButton.addEventListener('click', () => {
             searchResults.push(i);
          }
       }
-      // Added an Event Listener for the search box to function properly so that the click of a button will send a signal to the computer to take you from one page to the next. 
-      // Created an array to hold the number of hidden students.
-
+     
 // If all students are hidden, a "no results" message is displayed.
       if (searchResults.length === eachStudent.length) {
          noResultDiv.innerHTML = '<h1>No Results</h1>';
@@ -129,6 +131,7 @@ searchButton.addEventListener('click', () => {
 
 // Function call to display first ten students on the list.
 showPage(eachStudent, 1);
+
 //Function call to show the six separate page links.
 appendPageLinks ()
 
