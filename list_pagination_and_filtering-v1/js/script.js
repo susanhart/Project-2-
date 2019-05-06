@@ -59,24 +59,19 @@ function showPage (list, page) { // Function to assign an index of students.
    var endIndex = page * studentsPerPage
 
    for (let i = 0; i < list.length; i++) {
-   if (i>= startIndex && i< endIndex) {
+     if (i>= startIndex && i< endIndex) {
       list[i].style.display = '';
-    } else  { list[i].style.display = 'none';} 
+      } else  {
+       list[i].style.display = 'none';
+      } 
 
    // Show 10 students out of the entire index of students.  
    // Hide the rest.
    
       }
    }
-   showPage (pageList,1); 
-
-function showFirstTen() {
-   for (let i = 0; i < eachStudent.length; i++) {
-      if (i >= studentsPerPage) {
-         eachStudent[i].style.display = 'none';
-      }
-   }
-} // Function to automatically show the first ten students when the page loads.
+   
+// Function to automatically show the first ten students when the page loads.
 //Created the `showPage` function to hide all of the items in the list except the items you want to show.
 
 /*** 
@@ -149,7 +144,7 @@ buttonDiv.addEventListener('click', (event) => {
    }
 }); // Add  ed an Event Listener to divide the students between pages, ten per page.
 
-showFirstTen(); 
+showPage(eachStudent, StudentsPerPage); 
 // Function call to display first ten students on the list.
 })
 
