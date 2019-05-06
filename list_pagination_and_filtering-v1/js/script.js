@@ -45,15 +45,7 @@ function numberOfPages() {
    return pages;
 }  // Function to determine the number of pages based on the number of students.
 
-for (let i = 1; i <= numberOfPages(); i++) {
-   let pageli = document.createElement("li");
-   let pageLink = document.createElement('a');
-   pageLink.className = 'active';
-   pageLink.href = '#';
-   pageLink.textContent = i;
-   pageList.appendChild(pageli);
-   pageli.appendChild(pageLink);
-}  // For Loop to create page buttons based on the number (6) of required pages.
+  // For Loop to create page buttons based on the number (6) of required pages.
 
 function showPage(list, page) { // Function to assign an index of students.
    var startIndex = (page * studentsPerPage) - studentsPerPage
@@ -65,7 +57,6 @@ function showPage(list, page) { // Function to assign an index of students.
       } else {
          list[i].style.display = 'none';
       }
-      console.log("i:" + i + " startIndex:" + startIndex + " list:" + list[i]);
 
       // Show 10 students out of the entire index of students.  
       // Hide the rest.
@@ -81,25 +72,29 @@ function showPage(list, page) { // Function to assign an index of students.
    functionality to the pagination buttons.
 ***/
 
-function appendPageLinks(list) {
+function appendPageLinks() {
    let pages = Math.ceil(eachStudent.length / studentsPerPage);
    // Creating the container for our pagination links, 
    // the "apendPageLinks function" in order to generate,
    // append, and add functionality to the pagination buttons.
 
    const pagination = document.createElement('div');
-   const paginationWrapper = document.querySelector('.pagination');
-   const pageDiv = document.querySelector('body div');
-   const List = document.createElement('ul');
-   pagination.appendChild(List);
+   for (let i = 0; i < pages; i += 1) {
+      let pageLink = document.createElement('a');
+      pageLink.className = 'active';
+      pageLink.href = '#';
+      pageLink.textContent = i;
+      pagination.appendChild(pageLink)
+      /*/const pageElement = document.createElement('li');
+      pageLink.textContent = i + 1;
+      pageLink.classList.remove('active');
+      pageLink.addEventListener("click", () => { })*/
+   } 
+   document.body.appendChild(pagination)//const List = document.createElement('ul');
+   //pagination.appendChild(List);
 } // Creates each button for the pagination.
 
-for (let i = 0; i < numberOfPages; i += 1) {
-   const pageElement = document.createElement('li');
-   pageLink.textContent = i + 1;
-   pageLink.classList.remove('active');
-   pageLink.addEventListener("click", () => { })
-} // Added an event lsitener to listen for a click on the buttons 
+// Added an event lsitener to listen for a click on the buttons 
 // to rerun functions with the output of the page and the list.
 
 let searchInput = document.createElement('input');
@@ -134,8 +129,8 @@ searchButton.addEventListener('click', () => {
    }; // If all students are hidden, a "no results" message is displayed.
 });
 
-/*
-buttonDiv.addEventListener('click', (event) => {
+
+/*buttonDiv.addEventListener('click', (event) => {
    noResultDiv.innerHTML = '';
    let buttonNumber = parseInt(event.target.textContent);
    // The `event` object is something made available inside an event listener. For example, when an event listener is created on a text input field, the event refers to the type of event- be it a click, keyup, onSubmit - there are many; the target is the place the event is happening- which is the text input field, and the textContent part grabs the text from the field. So, in a nutshell, that's how you grab data from the form.
@@ -148,9 +143,9 @@ buttonDiv.addEventListener('click', (event) => {
          eachStudent[i].style.display = 'none';
       }
    }
-});*/ // Add  ed an Event Listener to divide the students between pages, ten per page.
+}); */// Add  ed an Event Listener to divide the students between pages, ten per page.
 console.log("showPage")
 showPage(eachStudent, 1);
 // Function call to display first ten students on the list.
-
+appendPageLinks ()
 
