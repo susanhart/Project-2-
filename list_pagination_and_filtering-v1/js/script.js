@@ -79,16 +79,18 @@ function appendPageLinks() {
    // append, and add functionality to the pagination buttons.
 
    const pagination = document.createElement('div');
-   for (let i = 0; i < pages; i += 1) {
+   for (let i = 1; i <= pages; i += 1) {
       let pageLink = document.createElement('a');
       pageLink.className = 'active';
       pageLink.href = '#';
       pageLink.textContent = i;
+      pageLink.addEventListener("click", () => {showPage(eachStudent, i)})
       pagination.appendChild(pageLink)
+      pagination.appendChild(document.createTextNode (" "));
       /*/const pageElement = document.createElement('li');
       pageLink.textContent = i + 1;
       pageLink.classList.remove('active');
-      pageLink.addEventListener("click", () => { })*/
+      */
    } 
    document.body.appendChild(pagination)//const List = document.createElement('ul');
    //pagination.appendChild(List);
