@@ -2,7 +2,7 @@
 Treehouse Techdegree:
 FSJS project 2 - List Filter and Pagination
 ******************************************/
-   
+
 // Study guide for this project - https://drive.google.com/file/d/1OD1diUsTMdpfMDv677TfL1xO2CEkykSz/view?usp=sharing
 
 /*** 
@@ -16,13 +16,14 @@ FSJS project 2 - List Filter and Pagination
    scoped to that function.
 ***/
 
- const studentsPerPage = 10; //Assigning ten students per page load.
+const studentsPerPage = 10; //Assigning ten students per page load.
 
- const pageList = document.querySelector('ul');
- const eachStudent = pageList.children;
- 
- const searchDiv = document.querySelector('.student-search');
- const noResultDiv = document.querySelector('.no-result');
+const pageList = document.querySelector('ul');
+const eachStudent = pageList.children;
+
+const searchDiv = document.querySelector('.student-search');
+const noResultDiv = document.querySelector('.no-result');
+console.log('hello');
 //The list of variables (that store the DOM elements) needed to paginate.
 /*** 
    Create the `showPage` function to hide all of the items in the 
@@ -41,7 +42,7 @@ FSJS project 2 - List Filter and Pagination
 
 function numberOfPages() {
    let pages = Math.ceil(eachStudent.length / studentsPerPage);
-   return pages; 
+   return pages;
 }  // Function to determine the number of pages based on the number of students.
 
 for (let i = 1; i <= numberOfPages(); i++) {
@@ -54,24 +55,24 @@ for (let i = 1; i <= numberOfPages(); i++) {
    pageli.appendChild(pageLink);
 }  // For Loop to create page buttons based on the number (6) of required pages.
 
-function showPage (list, page) { // Function to assign an index of students.
+function showPage(list, page) { // Function to assign an index of students.
    var startIndex = (page * studentsPerPage) - studentsPerPage
    var endIndex = page * studentsPerPage
 
    for (let i = 0; i < list.length; i++) {
-     if (i>= startIndex && i< endIndex) {
-      list[i].style.display = '';
-      } else  {
-       list[i].style.display = 'none';
-      } 
-      console.log("i:"+i+" startIndex:"+startIndex+" list:"+list[i]);
-
-   // Show 10 students out of the entire index of students.  
-   // Hide the rest.
-   
+      if (i >= startIndex && i < endIndex) {
+         list[i].style.display = '';
+      } else {
+         list[i].style.display = 'none';
       }
+      console.log("i:" + i + " startIndex:" + startIndex + " list:" + list[i]);
+
+      // Show 10 students out of the entire index of students.  
+      // Hide the rest.
+
    }
-   
+}
+
 // Function to automatically show the first ten students when the page loads.
 //Created the `showPage` function to hide all of the items in the list except the items you want to show.
 
@@ -80,23 +81,24 @@ function showPage (list, page) { // Function to assign an index of students.
    functionality to the pagination buttons.
 ***/
 
-function appendPageLinks (list) {
+function appendPageLinks(list) {
    let pages = Math.ceil(eachStudent.length / studentsPerPage);
    // Creating the container for our pagination links, 
    // the "apendPageLinks function" in order to generate,
    // append, and add functionality to the pagination buttons.
-   
-   const pagination = document.createElement ('div');
-   const paginationWrapper = document.querySelector('.pagination');
-   const pageDiv = document.querySelector ('body div');
-const List = document.createElement ('ul');
-pagination.appendChild(List);} // Creates each button for the pagination.
 
-for (let i=0; i< numberOfPages; i+=1) {
+   const pagination = document.createElement('div');
+   const paginationWrapper = document.querySelector('.pagination');
+   const pageDiv = document.querySelector('body div');
+   const List = document.createElement('ul');
+   pagination.appendChild(List);
+} // Creates each button for the pagination.
+
+for (let i = 0; i < numberOfPages; i += 1) {
    const pageElement = document.createElement('li');
-   pageLink.textContent = i+1;
-pageLink.classList.remove ('active');
-pageLink.addEventListener("click", () => {})
+   pageLink.textContent = i + 1;
+   pageLink.classList.remove('active');
+   pageLink.addEventListener("click", () => { })
 } // Added an event lsitener to listen for a click on the buttons 
 // to rerun functions with the output of the page and the list.
 
@@ -104,48 +106,51 @@ let searchInput = document.createElement('input');
 let searchButton = document.createElement('button');
 function showSearch() {
    searchInput.placeholder = 'Search for students...';
-searchButton.textContent = 'Search';
-searchDiv.appendChild(searchInput);
-searchDiv.appendChild(searchButton);
+   searchButton.textContent = 'Search';
+   searchDiv.appendChild(searchInput);
+   searchDiv.appendChild(searchButton);
 } // Function to display the search box dynamically.
 
 const searchResults = [];
 searchButton.addEventListener('click', () => {
    let filter = searchInput.value.toLowerCase();
-   searchResults.length = 0; 
-   for (let i = 0; i < eachStudent.length; i++){
-     { if (eachStudent[i].innerHTML.indexOf(filter) > -1)
-      eachStudent[i].style.display = ''; { 
-      eachStudent[i].style.display = 'none';
-      searchResults.push(i);
-    }
-   } 
-    // Added an Event Listener for the search box to function properly so that the click of a button will send a signal to the computer to take you from one page to the next. 
-   // Created an array to hold the number of hidden students.
+   searchResults.length = 0;
+   for (let i = 0; i < eachStudent.length; i++) {
+      {
+         if (eachStudent[i].innerHTML.indexOf(filter) > -1)
+            eachStudent[i].style.display = ''; {
+            eachStudent[i].style.display = 'none';
+            searchResults.push(i);
+         }
+      }
+      // Added an Event Listener for the search box to function properly so that the click of a button will send a signal to the computer to take you from one page to the next. 
+      // Created an array to hold the number of hidden students.
 
       if (searchResults.length === eachStudent.length) {
-   noResultDiv.innerHTML = '<h1>No Results</h1>';    
-   }  else {
-      noResultDiv.innerHTML = '';
-   }
-}; // If all students are hidden, a "no results" message is displayed.
-  
+         noResultDiv.innerHTML = '<h1>No Results</h1>';
+      } else {
+         noResultDiv.innerHTML = '';
+      }
+   }; // If all students are hidden, a "no results" message is displayed.
+});
+
+/*
 buttonDiv.addEventListener('click', (event) => {
    noResultDiv.innerHTML = '';
-   let buttonNumber = parseInt(event.target.textContent); 
+   let buttonNumber = parseInt(event.target.textContent);
    // The `event` object is something made available inside an event listener. For example, when an event listener is created on a text input field, the event refers to the type of event- be it a click, keyup, onSubmit - there are many; the target is the place the event is happening- which is the text input field, and the textContent part grabs the text from the field. So, in a nutshell, that's how you grab data from the form.
    let max = buttonNumber * 10;
    let min = max - 10;
    for (let i = 0; i < eachStudent.length; i++) {
-      if (i>= min && i <= max) {
+      if (i >= min && i <= max) {
          eachStudent[i].style.display = '';
       } else {
          eachStudent[i].style.display = 'none';
       }
    }
-}); // Add  ed an Event Listener to divide the students between pages, ten per page.
-console.log ("showPage")
-showPage(eachStudent, StudentsPerPage); 
+});*/ // Add  ed an Event Listener to divide the students between pages, ten per page.
+console.log("showPage")
+showPage(eachStudent, 1);
 // Function call to display first ten students on the list.
-})
+
 
