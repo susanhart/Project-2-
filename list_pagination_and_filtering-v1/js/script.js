@@ -64,6 +64,7 @@ function showPage (list, page) { // Function to assign an index of students.
       } else  {
        list[i].style.display = 'none';
       } 
+      console.log("i:"+i+" startIndex:"+startIndex+" list:"+list[i]);
 
    // Show 10 students out of the entire index of students.  
    // Hide the rest.
