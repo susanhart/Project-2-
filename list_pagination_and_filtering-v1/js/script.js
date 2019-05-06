@@ -144,7 +144,7 @@ buttonDiv.addEventListener('click', (event) => {
       }
    }
 }); // Add  ed an Event Listener to divide the students between pages, ten per page.
-
+console.log ("showPage")
 showPage(eachStudent, StudentsPerPage); 
 // Function call to display first ten students on the list.
 })
