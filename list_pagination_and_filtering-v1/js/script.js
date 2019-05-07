@@ -22,9 +22,6 @@ const studentsPerPage = 10;
 const pageList = document.querySelector('ul');
 const eachStudent = pageList.children;
 
-//
-//const noResultDiv = document.querySelector('.no-result');
-
 /*** 
    Create the `showPage` function to hide all of the items in the 
    list except for the ten you want to show.
