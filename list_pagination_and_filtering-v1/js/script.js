@@ -22,8 +22,8 @@ const studentsPerPage = 10;
 const pageList = document.querySelector('ul');
 const eachStudent = pageList.children;
 
-const searchDiv = document.querySelector('.student-search');
-const noResultDiv = document.querySelector('.no-result');
+//
+//const noResultDiv = document.querySelector('.no-result');
 
 /*** 
    Create the `showPage` function to hide all of the items in the 
@@ -97,11 +97,15 @@ function appendPageLinks() {
 
 let searchInput = document.createElement('input');
 let searchButton = document.createElement('button');
+let searchDiv = document.createElement('div')
 function showSearch() {
    searchInput.placeholder = 'Search for students...';
    searchButton.textContent = 'Search';
    searchDiv.appendChild(searchInput);
    searchDiv.appendChild(searchButton);
+   const Students = document.querySelector('.page-header');
+Students.appendChild(searchDiv)
+const noResultDiv = document.querySelector('.no-result');
 } 
 const searchResults = [];
 
@@ -135,3 +139,4 @@ showPage(eachStudent, 1);
 //Function call to show the six separate page links.
 appendPageLinks ()
 
+showSearch ()
