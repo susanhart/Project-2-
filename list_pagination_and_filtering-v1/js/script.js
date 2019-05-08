@@ -51,8 +51,11 @@ function appendPageLinks() {
    
    //Created separate buttons for the 6 pages.
    const pagination = document.createElement('div');
+   const ul = document.createElement('ul'); 
+   
    for (let i = 1; i <= pages; i += 1) {
       let pageLink = document.createElement('a');
+      const li = document.createElement('li');
       pageLink.className = 'active';
       pageLink.href = '#';
       pageLink.textContent = i;
