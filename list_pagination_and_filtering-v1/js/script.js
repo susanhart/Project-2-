@@ -50,9 +50,28 @@ function appendPageLinks() {
    let pages = Math.ceil(eachStudent.length / studentsPerPage);
    
    //Created separate buttons for the 6 pages.
+
+   let page = document.body.querySelector('.page');
+   //Added variable "page" so that the buttons would be 
+   //part of the div (container) with className "page".
+
    const pagination = document.createElement('div');
+   
+   pagination.className = "pagination";
+   //Added the className of "pagination" to the div,
+   //ensuring that the buttons recieve the css styling
+   //connected to the div with the "pagination" classname.
+
+   page.appendChild(pagination);
+   // This appends the div to the page which
+   //partly is what places the buttons in the 
+   //correct place.
+
    const ul = document.createElement('ul'); 
    
+   pagination.append(ul);
+   //This adds the <ul> element to the div I created.
+
    for (let i = 1; i <= pages; i += 1) {
       let pageLink = document.createElement('a');
       const li = document.createElement('li');
@@ -60,8 +79,13 @@ function appendPageLinks() {
       pageLink.href = '#';
       pageLink.textContent = i;
 
+      li.appendChild(pageLink)
+      //This connects the li elements to the div as well. 
+
 // Added an event listener to listen for a click on the buttons 
 // to rerun functions with the output of the page and the list.
+
+      ul.appendChild(li)      
 
       pageLink.addEventListener("click", () => {showPage(eachStudent, i)})
       pagination.appendChild(pageLink)
