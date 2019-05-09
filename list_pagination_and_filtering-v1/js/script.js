@@ -88,7 +88,7 @@ function appendPageLinks() {
       ul.appendChild(li)      
 
       pageLink.addEventListener("click", () => {showPage(eachStudent, i)})
-      pagination.appendChild(pageLink)
+      
       pagination.appendChild(document.createTextNode (" ")); 
       
    } 
