@@ -91,7 +91,6 @@ function appendPageLinks() {
       pagination.appendChild(pageLink)
       pagination.appendChild(document.createTextNode (" ")); 
       
-      pagination> li> 'a'
    } 
 } 
 // Function to display the search box dynamically.
