@@ -92,8 +92,8 @@ function appendPageLinks() {
       pagination.appendChild(document.createTextNode (" ")); 
       
    } 
-}
-   for (let i = 0; i<= pages; i+=1) {
+} 
+  /* for (let i = 0; i<= pages; i+=1) {
       const pageLink = document.querySelectorAll ('a');
       pageLinks[i].addEventListener("click", (event) => 
       {showPage(eachStudent, i+1);
@@ -103,7 +103,7 @@ function appendPageLinks() {
          } 
          event.target.className = "active";
       });
-   }
+  */ 
 
 // Function to display the search box dynamically.
 
