@@ -93,7 +93,7 @@ function appendPageLinks() {
       
    } 
 } 
-  /* for (let i = 1; i<= pages.length; i+=1) {
+  /* for (let i = 1; i<= pages; i+= 1) {
       const button = document.querySelectorAll ('a');
       button[i].addEventListener("click", (event) => 
       {showPage(eachStudent, i+1);
