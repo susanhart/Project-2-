@@ -78,7 +78,7 @@ function appendPageLinks() {
       pageLink.className = 'active';
       pageLink.href = '#';
       pageLink.textContent = i;
-
+     
       li.appendChild(pageLink)
       //This connects the li elements to the div as well. 
 
@@ -92,7 +92,19 @@ function appendPageLinks() {
       pagination.appendChild(document.createTextNode (" ")); 
       
    } 
-} 
+}
+   for (let i = 0; i<= pages; i+=1) {
+      const pageLink = document.querySelectorAll ('a');
+      pageLinks[i].addEventListener("click", (event) => 
+      {showPage(eachStudent, i+1);
+         
+         for (let i = 0; i<= pages; i+=1)  {
+         pageLinks[i].className = "";    
+         } 
+         event.target.className = "active";
+      });
+   }
+
 // Function to display the search box dynamically.
 
 let searchInput = document.createElement('input');
