@@ -93,18 +93,18 @@ function appendPageLinks() {
       
    } 
 } 
-  /* for (let i = 0; i<= pages; i+=1) {
-      const pageLink = document.querySelectorAll ('a');
-      pageLinks[i].addEventListener("click", (event) => 
+  /* for (let i = 1; i<= pages.length; i+=1) {
+      const button = document.querySelectorAll ('a');
+      button[i].addEventListener("click", (event) => 
       {showPage(eachStudent, i+1);
          
-         for (let i = 0; i<= pages; i+=1)  {
-         pageLinks[i].className = "";    
+         for (let i = 1; i<= pages; i+=1)  {
+         button[i].className = "";    
          } 
          event.target.className = "active";
       });
-  */ 
-
+   }
+*/
 // Function to display the search box dynamically.
 
 let searchInput = document.createElement('input');
