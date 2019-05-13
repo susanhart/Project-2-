@@ -37,8 +37,19 @@ function numberOfPages() {
          list[i].style.display = 'none';
       }
 
+   } for (let i = 1; i <= 6; i += 1){
+      var myElement = document.getElementById("Div" + i);
+      
+         myElement.classList.remove("active");
+         if (page == i) {
+
+         myElement.classList.add('active'); 
+
+         }
+      }
+      
    }
-}
+ 
   //Created the `appendPageLinks function` to generate, append, and add 
   // functionality to the pagination buttons.
 
@@ -81,7 +92,8 @@ function appendPageLinks() {
      
       li.appendChild(pageLink)
       //This connects the li elements to the div as well. 
-
+      
+      pageLink.setAttribute("id", "Div" + i);
 // Added an event listener to listen for a click on the buttons 
 // to rerun functions with the output of the page and the list.
 
@@ -117,7 +129,7 @@ function showSearch() {
    searchDiv.appendChild(searchButton);
    const Students = document.querySelector('.page-header');
 Students.appendChild(searchDiv)
-const noResultDiv = document.querySelector('.no-result');
+
 } 
 const searchResults = [];
 
@@ -137,7 +149,8 @@ searchButton.addEventListener('click', () => {
       }
      
 // If all students are hidden, a "no results" message is displayed.
-      if (searchResults.length === eachStudent.length) {
+     const noResultDiv = document.querySelector('.no-result');
+        if (searchResults.length === eachStudent.length) {
          noResultDiv.innerHTML = '<h1>No Results</h1>';
       } else {
          noResultDiv.innerHTML = '';
@@ -146,10 +159,8 @@ searchButton.addEventListener('click', () => {
 });
 
 // Function call to display first ten students on the list.
-showPage(eachStudent, 1);
-
 //Function call to show the six separate page links.
-appendPageLinks ()
-
+appendPageLinks ();
+showPage(eachStudent, 1);
 //Function call to show the search box for searching for a particular student from the list of 54 students.
-showSearch ()
+showSearch ();
