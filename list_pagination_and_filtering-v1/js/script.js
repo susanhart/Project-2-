@@ -163,4 +163,4 @@ searchButton.addEventListener('click', () => {
 appendPageLinks ();
 showPage(eachStudent, 1);
 //Function call to show the search box for searching for a particular student from the list of 54 students.
-showSearch ();
+//showSearch ();
