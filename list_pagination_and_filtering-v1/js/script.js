@@ -16,7 +16,7 @@ const eachStudent = pageList.children;  //getting all the child elements of the 
 // Function to determine the number of pages based on the number of students.
 
 function numberOfPages() {
-   let pages = Math.ceil(eachStudent.length / studentsPerPage);
+   let pages = Math.ceil(eachStudent.length / studentsPerPage); //rounds to the highest number the # of students (64) divided by the students per page (10)
    return pages;
 } 
  // Function to assign an index of students.  
@@ -25,24 +25,24 @@ function numberOfPages() {
 
  function showPage(list, page) { 
    var startIndex = (page * studentsPerPage) - studentsPerPage
-   var endIndex = page * studentsPerPage
+   var endIndex = page * studentsPerPage  //start and end index of what will show on the page
 
    // For Loop to create page buttons based on the number (6) of required pages.
 // Show 10 students out of the entire index of students.  
       // Hide the rest.
-   for (let i = 0; i < list.length; i++) {
-      if (i >= startIndex && i < endIndex) {
+   for (let i = 0; i < list.length; i++) {  //iterating through all 64 students on the list
+      if (i >= startIndex && i < endIndex) { //if i is greater than or equal to the start index and less than the end index, it will display
          list[i].style.display = '';
       } else {
          list[i].style.display = 'none';
       }
 
-   } for (let i = 1; i <= 6; i += 1){
-      var myElement = document.getElementById("Div" + i);
+   } for (let i = 1; i <= 6; i += 1){ //6 is the page length
+      var myElement = document.getElementById("Div" + i);  // the for loop will iterate through all the page links
       
          myElement.classList.remove("active");
-         if (page == i) {
-
+         if (page == i) {  // if the page that you click on is equal to i, then that page link will become active
+                           // the other pages are all deactivated 
          myElement.classList.add('active'); 
 
          }
@@ -58,22 +58,22 @@ function numberOfPages() {
    // append, and add functionality to the pagination buttons.
 
 function appendPageLinks() {
-   let pages = Math.ceil(eachStudent.length / studentsPerPage);
-   
+   let pages = Math.ceil(eachStudent.length / studentsPerPage); //same as calling function numberOfPages
+   //let pages = numberOfPages()
    //Created separate buttons for the 6 pages.
 
-   let page = document.body.querySelector('.page');
+   let page = document.body.querySelector('.page'); //selecting the page to append pagination (the div) to the page
    //Added variable "page" so that the buttons would be 
    //part of the div (container) with className "page".
 
-   const pagination = document.createElement('div');
+   const pagination = document.createElement('div'); //creating the pagination div
    
-   pagination.className = "pagination";
+   pagination.className = "pagination"; //giving the div the class name pagination
    //Added the className of "pagination" to the div,
    //ensuring that the buttons recieve the css styling
    //connected to the div with the "pagination" classname.
 
-   page.appendChild(pagination);
+   page.appendChild(pagination); //appending pagination to the page
    // This appends the div to the page which
    //partly is what places the buttons in the 
    //correct place.
