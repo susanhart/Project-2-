@@ -78,30 +78,30 @@ function appendPageLinks() {
    //partly is what places the buttons in the 
    //correct place.
 
-   const ul = document.createElement('ul'); 
+   const ul = document.createElement('ul'); //created an unordered list
    
-   pagination.append(ul);
+   pagination.append(ul); //appended the ul to the pagination div
    //This adds the <ul> element to the div I created.
 
-   for (let i = 1; i <= pages; i += 1) {
+   for (let i = 1; i <= pages; i += 1) { // for loop will loop through all the pages and create an anchor tag (the pageLink) and list (li) items for each page
       let pageLink = document.createElement('a');
       const li = document.createElement('li');
-      pageLink.className = 'active';
-      pageLink.href = '#';
-      pageLink.textContent = i;
+      pageLink.className = 'active'; //this makes all the pages active
+      pageLink.href = '#';  //this turns the page numbers into links (href is a hyperlink reference)
+      pageLink.textContent = i; // i is the page number, the text content of the oge it is on
      
-      li.appendChild(pageLink)
+      li.appendChild(pageLink) //appending all the anchor tags created under pageLink to the list items
       //This connects the li elements to the div as well. 
       
-      pageLink.setAttribute("id", "Div" + i);
+      pageLink.setAttribute("id", "Div" + i); //giving all the pageLinks the id of i, whatever page (index) it is on
 // Added an event listener to listen for a click on the buttons 
 // to rerun functions with the output of the page and the list.
 
-      ul.appendChild(li)      
+      ul.appendChild(li)   //appending all the list items to the unordered list   
 
-      pageLink.addEventListener("click", () => {showPage(eachStudent, i)})
+      pageLink.addEventListener("click", () => {showPage(eachStudent, i)}) //every time you click it calls the function showPage with those parameters of the list of students and the page
       
-      pagination.appendChild(document.createTextNode (" ")); 
+      //pagination.appendChild(document.createTextNode (" ")); 
       
    } 
 } 
@@ -119,44 +119,44 @@ function appendPageLinks() {
 */
 // Function to display the search box dynamically.
 
-let searchInput = document.createElement('input');
-let searchButton = document.createElement('button');
-let searchDiv = document.createElement('div')
-function showSearch() {
-   searchInput.placeholder = 'Search for students...';
-   searchButton.textContent = 'Search';
-   searchDiv.appendChild(searchInput);
-   searchDiv.appendChild(searchButton);
-   const Students = document.querySelector('.page-header');
-Students.appendChild(searchDiv)
+// let searchInput = document.createElement('input');
+// let searchButton = document.createElement('button');
+// let searchDiv = document.createElement('div')
+// function showSearch() {
+//    searchInput.placeholder = 'Search for students...';
+//    searchButton.textContent = 'Search';
+//    searchDiv.appendChild(searchInput);
+//    searchDiv.appendChild(searchButton);
+//    const Students = document.querySelector('.page-header');
+// Students.appendChild(searchDiv)
 
-} 
-const searchResults = [];
+// } 
+// const searchResults = [];
 
  // Added an Event Listener for the search box to function properly so that the click of a button will send a signal to the computer to take you from one page to the next. 
       // Created an array to hold the number of hidden students.
 
-searchButton.addEventListener('click', () => {
-   let filter = searchInput.value.toLowerCase();
-   searchResults.length = 0;
-   for (let i = 0; i < eachStudent.length; i++) {
-      {
-         if (eachStudent[i].innerHTML.indexOf(filter) > -1)
-            eachStudent[i].style.display = ''; {
-            eachStudent[i].style.display = 'none';
-            searchResults.push(i);
-         }
-      }
+// searchButton.addEventListener('click', () => {
+//    let filter = searchInput.value.toLowerCase();
+//    searchResults.length = 0;
+//    for (let i = 0; i < eachStudent.length; i++) {
+//       {
+//          if (eachStudent[i].innerHTML.indexOf(filter) > -1)
+//             eachStudent[i].style.display = ''; {
+//             eachStudent[i].style.display = 'none';
+//             searchResults.push(i);
+//          }
+//       }
      
-// If all students are hidden, a "no results" message is displayed.
-     const noResultDiv = document.querySelector('.no-result');
-        if (searchResults.length === eachStudent.length) {
-         noResultDiv.innerHTML = '<h1>No Results</h1>';
-      } else {
-         noResultDiv.innerHTML = '';
-      }
-   }; 
-});
+// // If all students are hidden, a "no results" message is displayed.
+//      const noResultDiv = document.querySelector('.no-result');
+//         if (searchResults.length === eachStudent.length) {
+//          noResultDiv.innerHTML = '<h1>No Results</h1>';
+//       } else {
+//          noResultDiv.innerHTML = '';
+//       }
+//    }; 
+// });
 
 // Function call to display first ten students on the list.
 //Function call to show the six separate page links.
