@@ -101,7 +101,7 @@ function appendPageLinks() {
 
       pageLink.addEventListener("click", () => {showPage(eachStudent, i)}) //every time you click it calls the function showPage with those parameters of the list of students and the page
       
-      //pagination.appendChild(document.createTextNode (" ")); 
+      //pagination.appendChild(document.createTextNode (" ")); // a space to hold the no results message for the search
       
    } 
 } 
