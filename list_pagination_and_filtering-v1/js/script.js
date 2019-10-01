@@ -11,7 +11,7 @@ FSJS project 2 - List Filter and Pagination
 
 const studentsPerPage = 10;
 const pageList = document.querySelector('ul');
-const eachStudent = pageList.children;
+const eachStudent = pageList.children;  //getting all the child elements of the pageList ul (gets everything inside the ul class of "student-list")
 
 // Function to determine the number of pages based on the number of students.
 
